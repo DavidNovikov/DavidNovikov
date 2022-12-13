@@ -13,9 +13,23 @@
 
         gtag('config', 'G-9JVWY639ZZ');
     </script>
+    <script>
+        function myFunction(imgs) {
+            // Get the expanded image
+            var expandImg = document.getElementById("expandedImg");
+            // Get the image text
+            var imgText = document.getElementById("imgtext");
+            // Use the same src in the expanded image as the image being clicked on from the grid
+            expandImg.src = imgs.src;
+            // Use the value of the alt attribute of the clickable image as text inside the expanded image
+            imgText.innerHTML = imgs.alt;
+            // Show the container element (hidden with CSS)
+            expandImg.parentElement.style.display = "block";
+        }
+    </script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <title>David's Home Page</title>
+    <title>David Novikov</title>
     <style type="text/css">
         img {
             display: block;
@@ -23,19 +37,25 @@
             margin-right: auto;
         }
 
+        .content {
+            max-width: 1000px;
+            margin: auto;
+        }
+
         table,
         th,
         td {
-            border: 1px solid black;
             padding: 4px;
-        }
-
-        table {
-            border-spacing: 10px;
+            justify-content: center;
         }
 
         /* Set additional styling options for the columns*/
-        .column {
+        .columnL {
+            float: left;
+            width: 50%;
+        }
+
+        .columnR {
             float: left;
             width: 50%;
         }
@@ -55,7 +75,9 @@
         }
 
         .image img {
-            padding: 25px 25px 25px 25px;
+            padding: 15px 15px 15px 15px;
+            max-height: 300px;
+            max-width: 300px;
             position: relative;
             left: 0%;
             width: 40vw;
@@ -64,46 +86,126 @@
             height: 100%;
             /* Sets the height to parent div's size */
         }
+
+        .image2 img {
+            justify-content: center;
+            max-height: 250px;
+            max-width: 250px;
+            height: auto;
+            width: auto;
+        }
+
+        body {
+            background: #eee;
+        }
+
+        /* (B) GALLERY WRAPPER */
+        .gallery {
+            /* (B1) GRID LAYOUT - 3 IMAGES PER ROW */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+
+            /* (B2) OPTIONAL WIDTH RESTRICT */
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
     </style>
 </head>
 
 <body>
-    <h1 style="text-align:center">David Novikov's website</h1>
-    <div class="row">
-        <div class="column">
-            <div class="container">
-                <div class="image">
-                    <p><img src="Image.jpg" alt="David Having a Grand Time" /></p>
+    <h1 style="text-align:center">David Novikov</h1>
+    <div id="layout-content" class="content">
+
+        <table style="width: 100%;">
+            <tbody>
+                <tr>
+                    <td style="width: 30%;">
+                        <div class="image">
+                            <p><img src="Image.jpg" alt="David Having a Grand Time" /></p>
+                        </div>
+                    </td>
+                    <td style="width: 70%;">
+                        <p>
+                            Hi, I'm David! I'm an Honors Computer Science and Engineering major with a minor in Russian
+                            Language
+                            and Culture at The Ohio State University. I am
+                            interested in machine learning research and more specifically computer vision research. I
+                            have
+                            been
+                            fortunate to work with
+                            <a href="https://ceg.osu.edu/people/yilmaz.15">Professor Alper Yilmaz</a> on a stroke
+                            detection
+                            project and my honors research thesis in vehicle geolocalization. I have also greatly
+                            enjoyed working with <a href="https://www.crcv.ucf.edu/person/mubarak-shah/">Professor
+                                Mubarak
+                                Shah</a> on a
+                            synthetic
+                            data generation project.
+
+                        </p>
+                        <p><a href="mailto: novikov.11@osu.edu">Email me</a></p>
+                        <p>Read my <a href="David_Novikov_cv.pdf" download>CV</a></p>
+                        <p><a href="https://github.com/DavidNovikov">GitHub</a></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Highlighted experiences</h3>
+        <p>Summer 2022 REU <a href="https://www.crcv.ucf.edu/nsf-projects/reu/reu-2022/">project</a> at UCF
+            with
+            Professor Mubarak Shah and Rohit Gupta. We submitted to ICRA 2023 after the REU ended and we
+            performed
+            additional experimentation. Here is a <a
+                href="ICRA2023_Drone_Detection_With_Synthetic_Data-8.pdf">manuscript</a> of the
+            work we submitted.</p>
+        <p>Hackathon 2022 <a href="https://github.com/DavidNovikov/Hackio2022">project</a> on
+            distracted driving. We placed first! Here is an <a
+                href="https://engineering.osu.edu/news/2022/10/ohio-states-largest-hackathon-celebrates-10th-anniversary">article</a>
+            written about the hackathon.
+        </p>
+        <div class="row">
+            <h4>Some fun pictures I generated using rocks!</h4>
+            <p>Can you spot the rock puns?</p>
+            <!-- The grid: four columns -->
+
+            <div class="row">
+
+                <div class="gallery">
+                    <div class="container">
+                        <div class="image2"> <img src="img2.png" alt="knight" title="knight" /></div>
+                    </div>
+                    <div class="container">
+                        <div class="image2"> <img src="img4.png" alt="picasso1" title="picasso1" /></div>
+                    </div>
+                    <div class="container">
+                        <div class="image2"> <img src="img5.png" alt="picasso2" title="picasso2" /></div>
+                    </div>
+                    <div class="container">
+                        <div class="image2"> <img src="img8.png" alt="chrisRock" title="chrisRock" /></div>
+                    </div>
+                    <div class="container">
+                        <div class="image2"> <img src="img10.png" alt="mishaTheCat" title="mishaTheCat" />
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="image2"> <img src="img13.png" alt="giraffe" title="giraffe" /></div>
+                    </div>
+                    <div class="container">
+                        <div class="image2"> <img src="img19.png" alt="mountrushmore" title="mountrushmore" />
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="image2"> <img src="img17.png" alt="numbersGarden" title="numbersGarden" />
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="image2"> <img src="img20.png" alt="theRock" title="theRock" /></div>
+                    </div>
                 </div>
             </div>
 
-        </div>
-        <div class="column">
-            <div class="rightText">
-                <p>
-                    Hi, I'm David! I'm a computer science and engineering major at The Ohio State University. I am
-                    interested in machine learning research and more specifically computer vision research.
-                </p>
-                <p><a href="mailto: novikov.11@osu.edu">Email me</a></p>
-                <p>Read my <a href="David_Novikov_cv.pdf" download>CV</a></p>
-                <p><a href="https://github.com/DavidNovikov">GitHub</a></p>
-
-                <h3>Highlighted experiences</h3>
-                <p>Summer 2022 REU <a href="https://www.crcv.ucf.edu/nsf-projects/reu/reu-2022/">project</a> at UCF with
-                    Professor Mubarak Shah and Rohit Gupta. We submitted to ICRA 2023 after the REU ended and we
-                    performed
-                    additional experimentation. Here is a <a
-                        href="ICRA2023_Drone_Detection_With_Synthetic_Data-8.pdf">manuscript</a> of the
-                    work we submitted.</p>
-                <p>Hackathon 2022 <a href="https://github.com/DavidNovikov/Hackio2022">project</a> on
-                    distracted driving. We placed first! Here is an <a
-                        href="https://engineering.osu.edu/news/2022/10/ohio-states-largest-hackathon-celebrates-10th-anniversary">article</a>
-                    written about the hackathon.
-                </p>
-            </div>
-
-        </div>
-    </div>
 
 </body>
 
